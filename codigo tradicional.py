@@ -1,36 +1,44 @@
 # ---------------------------------------------
-# PROMEDIO SEMANAL DEL CLIMA
-# PROGRAMACIÓN TRADICIONAL
+# PROGRAMA: Promedio de notas de un estudiante
+# ENFOQUE: Programación Tradicional
 # ---------------------------------------------
 
-# Función para ingresar las temperaturas
-def ingresar_temperaturas():
-    temperaturas = []
-    dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
+# Función para ingresar las notas del estudiante
+def ingresar_notas():
+    # Lista donde se guardarán las notas
+    notas = []
 
-    for dia in dias:
-        temp = float(input(f"Ingrese la temperatura del {dia}: "))
-        temperaturas.append(temp)
+    # Pedimos al usuario cuántas notas va a ingresar
+    cantidad = int(input("¿Cuántas notas desea ingresar?: "))
 
-    return temperaturas
+    # Ciclo para pedir cada nota
+    for i in range(cantidad):
+        nota = float(input(f"Ingrese la nota {i + 1}: "))
+        notas.append(nota)  # Se guarda la nota en la lista
+
+    return notas
 
 
 # Función para calcular el promedio
-def calcular_promedio(temperaturas):
-    total = sum(temperaturas)
-    promedio = total / len(temperaturas)
+def calcular_promedio(notas):
+    # Sumamos todas las notas
+    suma = sum(notas)
+
+    # Calculamos el promedio
+    promedio = suma / len(notas)
+
     return promedio
 
 
-# Programa principal
+# Función principal
 def main():
-    print("PROMEDIO SEMANAL DEL CLIMA - PROGRAMACIÓN TRADICIONAL\n")
+    print("CÁLCULO DEL PROMEDIO - PROGRAMACIÓN TRADICIONAL\n")
 
-    temps = ingresar_temperaturas()
-    promedio = calcular_promedio(temps)
+    notas = ingresar_notas()           # Llamamos a la función para ingresar datos
+    promedio = calcular_promedio(notas)  # Calculamos el promedio
 
-    print(f"\nEl promedio semanal del clima es: {promedio:.2f} °C")
+    print(f"\nEl promedio final del estudiante es: {promedio:.2f}")
 
 
+# Ejecutamos el programa
 main()
-
